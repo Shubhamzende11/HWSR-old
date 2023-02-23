@@ -1,0 +1,178 @@
+<!-- begin::Header -->
+
+<div class="row col-md-14 col-lg-14 col-sm-14">
+   
+  <div
+    class="card-toolbar"
+    data-bs-toggle="tooltip"
+    data-bs-placement="top"
+    data-bs-trigger="hover"
+   
+  >
+
+  <a routerLink="/dashboard"><button type="button" class="btn btn-primary btn-rounded fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">Back</button></a>
+  
+  </div>
+</div>
+<br>
+
+<div class="card-header border-0 pt-2 tableheadcorner"style="background-color: #045d5d;">
+  <h3 class="text-center " style="margin-top: 1rem;">
+    <span class="card-label  text-white fw-bolder fs-5 mb-1 ">Total Stations : 38</span>
+   
+  </h3>
+  <div class="card-toolbar">
+    <!-- begin::Menu -->
+  
+    
+  </div>
+</div>
+<!-- end::Header -->
+<!-- begin::Body -->
+
+  <!-- begin::Table container -->
+  <div class="table-responsive"style="padding-top: 1rem"
+>
+    <!-- begin::Table -->
+    <table class="table align-middle gs-0 gy-1 justify-content-between">
+      <tbody >
+        <tr >
+    
+          <td>
+            <li class="fw-bolder text-center d-block mb-1 fs-6">Active Stations :<span style="color: green" > {{activedata.active_station}}</span></li>
+        
+          </td>
+       
+          <td>
+            <li class="fw-bolder text-center d-block mb-1 fs-6">Inactive Stations :<span style="color: red"> {{activedata.inactive_station}}</span> </li>
+       
+          </td>
+                 
+        </tr>
+      </tbody>
+        <!-- end::Table body -->
+      </table>
+      <!-- end::Table -->
+    </div>
+    <!-- end::Table container -->
+  
+
+<div class="row d-flex flex-sm-row  col-md-14 col-lg-14 col-sm-14">
+  <div _ngcontent-gkm-c24="" class=" col-md-6 col-lg-6 col-sm-6 ng-star-inserted">
+    <div class="card-body py-3 ">
+  
+ 
+    </div>
+    
+    <!-- <div class="card-body py-3 body "> -->
+      <!-- begin::Table container -->
+      <div class="table-responsive tableheight tableheadcorner">
+        <!-- begin::Table -->
+        <table
+          id="myTable"
+          class="table table-row-bordered table-row-g-100 align-middle gs-0 gy-3 tableFixHead ;"
+        >
+          <!-- begin::Table head -->
+          <thead class="fs-5px">
+            <tr class="fw-bolder">
+              <th class="min-w-60px text-center text-white">
+                <span
+                  >Active Station</span
+                >
+              </th>
+            <!-- end::Table head -->
+    
+            </tr>
+          </thead>
+  
+          <tbody >
+            <tr *ngFor="let arr of listofActiveData ;">
+              <td class="text-center">
+                <li class="fw-bolder d-block mb-1 fs-7"style="color: green" >{{arr.station_name}}</li>
+              </td>
+          
+            </tr>
+          </tbody>
+          
+        </table>
+          <!-- end::Table-->
+      </div>
+       <!-- end::Table container -->
+    
+
+  </div>
+  <div _ngcontent-gkm-c24="" class=" col-md-6 col-lg-6 col-sm-6 ng-star-inserted">
+    <div class="card-body py-3 ">
+  
+ 
+    </div>
+
+      <!-- begin::Table container -->
+      <div class="table-responsive tableheight tableheadcorner">
+        <!-- begin::Table -->
+        <table
+          id="myTable"
+          class="table table-row-bordered table-row-g-100 align-middle gs-0 gy-3 tableFixHead ;"
+        >
+          <!-- begin::Table head -->
+          <thead class="fs-5px">
+            <tr class="fw-bolder">
+              <th class="min-w-60px text-center text-white">
+                <span
+                  >Inactive Station</span
+                >
+              </th>
+            </tr>
+          </thead>
+          <!-- end::Table head -->
+  
+          <tbody >
+            <tr *ngFor="let arr of listOfInactiveData ;">
+              <td class="text-center">
+                <li class="fw-bolder d-block mb-1 fs-7"style="color: red" >{{arr.station_name}}</li>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+        <!-- end::Table-->
+      </div>
+
+      <!-- end::Table container -->
+    
+
+  </div>
+
+</div>
+
+   
+  
+
+
+
+
+
+
+
+
+<!-- 
+  <footer class="bg-info text-center text-lg-start fixed-bottom">
+
+
+    <div class="text-center p-3" style="background-color:#3065cb;">
+      <a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+    </div>
+  
+  </footer> -->
+  <footer class="text-center text-white fixed-bottom" style="background-color:#F1FAFF;">
+    <!-- Grid container -->
+    <div class="container p-2"></div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #3065cb;">
+      
+      <a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+    </div>
+    <!-- Copyright -->
+  </footer>

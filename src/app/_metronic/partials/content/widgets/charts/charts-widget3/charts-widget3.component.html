@@ -1,0 +1,33 @@
+<div class="card-header col-md-12  border-0 pt-5 ">
+  <h3 class="card-title align-items-start flex-column">
+    <span class="card-label text-white fw-bolder fs-6 mb-1">Wind Direction</span>
+  </h3>
+  <div class="card-toolbar" data-kt-buttons="true">
+    <a class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4 me-1 text-white  " id="kt_charts_widget_3_year_btn" (click)="displayYearData()" [ngClass]="yearToggle?'active': ''">Today</a>
+    <a class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4 me-1 text-white" id="kt_charts_widget_3_month_btn" (click)="displayMonthData()" [ngClass]="monthToggle?'active': ''"> Month </a>
+    <a class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4 me-1 text-white" id="kt_charts_widget_3_week_btn" (click)="displayWeekData()" [ngClass]="weekToggle?'active': ''">Year</a>
+  </div>
+
+</div>
+<div class="card-body col-mg-12 " >
+
+  <div #chartRef id="kt_charts_widget_3_chart" [style.height]="'200px'" >
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis" [dataLabels]="chartOptions.dataLabels" [stroke]="chartOptions.stroke"
+      [legend]="chartOptions.legend" [fill]="chartOptions.fill" [states]="chartOptions.states"
+      [tooltip]="chartOptions.tooltip" [colors]="chartOptions.colors" [markers]="chartOptions.markers"
+      [plotOptions]="chartOptions.plotOptions"></apx-chart>
+      <div *ngIf="isLoading"  class=" d-flex justify-content-center">
+        <mat-progress-spinner 
+            style="margin: 8%;"
+            value=75
+            color="primary" 
+            mode="indeterminate"
+            [diameter]="40">
+          </mat-progress-spinner>
+        </div>
+  </div>
+
+</div>
+
+

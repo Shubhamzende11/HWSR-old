@@ -1,0 +1,110 @@
+<div class="card-header border-0">
+
+  <div class="card-title">
+     <input class="form-control"type="text" id="myInput" type="text" placeholder="Search.." [(ngModel)]="searchText">
+
+  </div>
+
+  <div class="card-toolbar">
+
+
+    <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+
+      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"(click)="fileDownload()" data-bs-target="#kt_modal_add_user">Download</button> -->
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- <div class="card-body py-0 body "> -->
+
+<div class="table-responsive"
+
+>
+
+<table id="myTable"
+  class="table table-row-bordered table-row-g-100 align-middle gs-0 gy-3 tableFixHead ;"
+>
+  <thead class="fs-5px">
+    <tr class="fw-bolder">
+      <th class="min-w-70px text-center text-white">
+        <span
+          >Station <br />
+          Name</span
+        >
+      </th>
+      <th class="min-w-70px text-white">
+        <span>Wind Dir</span><br />1 min
+      </th>
+      <th class="min-w-70px text-white">
+        <span>Wind Dir</span><br />
+        3 min
+      </th>
+      <th class="min-w-70px text-white">
+        <span>Wind dir </span><br />max
+      </th>
+      <th class="min-w-85px text-white">
+        <span>Wind Speed</span><br>
+        1 min
+      </th>
+      <th class="min-w-80px text-white">
+        <span>Wind Speed</span><br />
+        3 min
+      </th>
+      <th class="min-w-85px text-white">
+        <span>Wind Speed</span><br />
+        max
+      </th>
+      <th class="min-w-70px text-white">
+        <span>Pressure</span><br />
+        insta
+      </th>
+      <th class="min-w-70px text-white">
+        <span>Pressure</span><br />
+        1 min
+      </th>
+
+    </tr>
+  </thead>
+
+  <tbody >
+    <tr *ngFor="let arr of data | search: searchText">
+
+
+      <td >
+        <a [routerLink]="['/stations',arr.station_id]"  class="text-dark fw-bolder d-block mb-1 fs-7px">{{arr.station_name}}</a>
+      </td>
+      <td>
+        <li class="green fw-bolder d-block mb-1 fs-9">{{arr.Wind_Dir1_min}}</li>
+      </td>
+      <td>
+        <li class=" teal fw-bolder d-block mb-1 fs-9">{{arr.Wind_Dir3_min}}</li>
+      </td>
+      <td>
+        <li class="orange fw-bolder d-block mb-1 fs-9">{{arr.Wind_dir_max}}</li>
+      </td>
+      <td>
+      <li class="yellow  fw-bolder d-block mb-1 fs-9">{{arr.Wind_Speed_1_min}}</li>
+      </td>
+      <td>
+        <li class="pink  fw-bolder d-block mb-1 fs-9">{{arr.Wind_speed_3_min}}</li>
+      </td>
+      <td >
+        <li class="cyan fw-bolder d-block mb-1 fs-9">{{arr.Wind_Speed_max}}</li>
+      </td>
+      <td >
+        <li class="text-dark fw-bolder d-block mb-1 fs-9">{{arr.Pressure_insta}}</li>
+      </td>
+      <td >
+        <li class="secondary fw-bolder d-block mb-1 fs-9">{{arr.Pressure_1_min}}</li>
+      </td>
+
+  </tbody>
+</table>
+
+
+</div>
+
+<!-- </div> -->

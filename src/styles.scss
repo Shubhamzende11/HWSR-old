@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/style";
+
+// Replace above style with this SCSS file to enable dark mode styles
+//@import "./assets/sass/style.dark";
+
+@import "./assets/sass/style.angular.scss";
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+.header-img-div {
+  width: 100%;
+  height: 105px;
+}
+
+.header-div-class{
+
+  padding: 0px;
+}
+
+
+.svg-icon{
+  visibility: hidden;
+}
+
+
+@media screen and (max-width: 767px) and (min-width: 200px) {
+
+  .header-img-div {
+    width: 101%;
+    height: 50px;
+  
+  }
+
+}
+	
+	@media screen and (max-width: 700px) and (min-width: 400px) {
+
+
+    .header-img-div {
+      width: 101%;
+      height: 50px;
+    
+    }
+  }
+	
+	@media screen and (max-width: 800px) and (min-width: 767px) {
+
+
+    .header-img-div {
+      width: 101%;
+      height: 50px;
+    
+    }
+
+  }
+
+  path.highcharts-point[fill="blue"] {
+    fill: white !important;
+    opacity: 1 !important;
+    stroke:red!important;
+    stroke-width: 0.5rem !important;
+    // transform: scale(1) !important;
+    /* stroke-width: 1rem; */
+};

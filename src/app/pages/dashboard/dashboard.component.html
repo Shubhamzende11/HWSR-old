@@ -1,0 +1,285 @@
+<div class="row d-flex flex-sm-row  col-md-14 col-lg-14 col-sm-14">
+
+  <div _ngcontent-gkm-c24="" class=" col-md-6 col-lg-6 col-sm-6 ng-star-inserted">
+    <section
+      _ngcontent-gkm-c24=""
+      class="col-lg-12 connectedSortable chart-mob-scroll ui-sortable"
+    >
+      <div _ngcontent-gkm-c24="" class="card">
+        <div
+          _ngcontent-gkm-c24=""
+          class="card-header ui-sortable-handle"
+          style="padding-bottom: inherit;"
+        >
+          <h3
+            _ngcontent-gkm-c24=""
+            class="card-title blocktitle accessibility-plugin-ac body fw-bolder text-white"
+          >
+            Coverage by State
+          </h3>
+          <div class="card-title d-flex justify-content-end" >
+            <a routerLink="/activeinactivestations"><button type="button" class="btn btn-primary fw-bolder" data-bs-toggle="modal"style="margin-right: -1.7rem" data-bs-target="#kt_modal_add_user">Stations</button></a>
+            </div>
+         
+        </div>
+  
+          <div _ngcontent-gkm-c24="" class="row">
+
+
+            <div
+
+              _ngcontent-gkm-c24=""
+              class="col-lg-12 col-sm-12 cardblockcls col-5 text-center " style="width: -webkit-fill-available">
+
+              <!-- id="style-1" -->
+
+              
+
+              <!-- <app-heatmap-bubble _ngcontent-gkm-c24="" _nghost-gkm-c23=""> -->
+              <div _ngcontent-gkm-c23="" class="chart-card ">
+                <div _ngcontent-gkm-c23="">
+                  <div _ngcontent-gkm-c23="" id="chart"></div>
+                  
+                  <br _ngcontent-gkm-c23="" />
+                  <div id="container" class="highmap">
+                    <div *ngIf="isLoading"  class=" d-flex justify-content-center">
+                      <mat-progress-spinner 
+                          style="margin: 30%;"
+                          value=75
+                          color="primary" 
+                          mode="indeterminate"
+                          [diameter]="40">
+                        </mat-progress-spinner>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+
+                <div _ngcontent-gkm-c23="" id="map">
+                  <div _ngcontent-gkm-c23="" id="select"></div>
+                </div>
+              </div>
+              
+            </div>
+            
+          <!-- </div> -->
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+<!-- table  -->
+
+
+<div _ngcontent-gkm-c24="" class=" col-md-6 col-lg-6 col-sm-6 ng-star-inserted">
+<section
+_ngcontent-gkm-c24=""
+class="col-lg-12 connectedSortable chart-mob-scroll ui-sortable"
+>
+<div _ngcontent-gkm-c24="" class="card">
+<div
+_ngcontent-gkm-c24=""
+class="card-header ui-sortable-handle"
+style="padding-bottom: inherit;"
+>
+<h3
+  _ngcontent-gkm-c24=""
+  class="card-title blocktitle accessibility-plugin-ac body fw-bolder text-white"
+>
+  
+</h3>
+<div class="card-title d-flex justify-content-center" >
+  <input
+        class=" form-control  "
+        type="text"
+        style="margin-right: -1.7rem"
+        type="text"
+        placeholder="Search.."[(ngModel)]="searchText">
+        
+  </div>
+
+</div>
+  
+
+    
+    
+    <!-- <div class="card-title d-flex justify-content-between">
+      <input
+        class=" form-control  "
+        type="text"
+
+        type="text"
+        placeholder="Search.."[(ngModel)]="searchText"> -->
+
+       <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"(click)="fileDownload()" data-bs-target="#kt_modal_add_user">Download</button> -->
+      <!-- </div> -->
+
+
+
+  </div>
+
+  <!-- <div class="card-body py-3 body "> -->
+ 
+    <!-- begin::Table container -->
+    <!-- class="table table-row-bordered table-row-g-100 align-middle gs-0 gy-3 tableFixHead ;" -->
+    <div class="table-responsive body tableheight">
+  
+      <table
+        id="myTable"
+        class="table  table-row-g-100 align-middle gs-0 gy-3 tableFixHead ;"
+    
+      >
+        
+        <thead class="fs-5px">
+          <tr class="fw-bolder">
+            <th class="min-w-70px text-center text-white">
+              <span
+                >Station <br />
+                Name</span
+              >
+            </th>
+            <th class="min-w-70px text-white">
+              <span>Wind Dir</span><br />1 min
+            </th>
+            <th class="min-w-70px text-white">
+              <span>Wind Dir</span><br />
+              3 min
+            </th>
+            <th class="min-w-70px text-white">
+              <span>Wind Dir </span><br />max
+            </th>
+            <th class="min-w-85px text-white">
+              <span>Wind Speed</span><br>
+              1 min
+            </th>
+            <th class="min-w-80px text-white">
+              <span>Wind Speed</span><br />
+              3 min
+            </th>
+            <th class="min-w-85px text-white">
+              <span>Wind Speed</span><br />
+              max
+            </th>
+            <th class="min-w-70px text-white">
+              <span>Pressure</span><br />
+              Insta
+            </th>
+            <th class="min-w-70px text-white">
+              <span>Pressure</span><br />
+              1 min
+            </th>
+
+          </tr>
+        </thead>
+
+
+        <tbody >
+          <tr *ngFor="let arr of data | search: searchText">
+        
+            <td >
+              <a [routerLink]="['/stations',arr.station_name,arr.station_id]" class="text-dark text-center fw-bolder d-block mb-1 fs-7px">{{arr.station_name}}</a>
+            </td>
+            <td>
+              <li class="  green fw-bolder d-block mb-1 fs-8">{{arr.Wind_Dir1_min}}</li>
+            </td>
+            <td>
+              <li class=" teal fw-bolder d-block mb-1 fs-8">{{arr.Wind_Dir3_min}}</li>
+            </td>
+            <td>
+              <li class="orange fw-bolder d-block mb-1 fs-8">{{arr.Wind_dir_max}}</li>
+            </td>
+            <td>
+            <li class="yellow  fw-bolder d-block mb-1 fs-8 ">{{arr.Wind_Speed_1_min}}</li>
+            </td>
+            <td>
+              <li class="pink  fw-bolder d-block mb-1 fs-8">{{arr.Wind_speed_3_min}}</li>
+            </td>
+            <td >
+              <li class="cyan fw-bolder d-block mb-1 fs-8">{{arr.Wind_Speed_max}}</li>
+            </td>
+            <td >
+              <li class="text-dark fw-bolder d-block mb-1 fs-8">{{arr.Pressure_insta}}</li>
+            </td>
+            <td >
+              <li class="text-dark fw-bolder d-block mb-1 fs-8">{{arr.Pressure_1_min}}</li>
+            </td>
+            <td >
+       
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="isLoading"  class=" d-flex justify-content-center">
+          <mat-progress-spinner 
+              style="margin: 30%;"
+              value=75
+              color="primary" 
+              mode="indeterminate"
+              [diameter]="40">
+            </mat-progress-spinner>
+        </div>
+        
+      </div>
+      <br>
+      <br>
+    
+
+
+
+
+
+
+
+<!-- <div class="row col-md-12 col-lg-12 col-sm-12">
+
+<div _ngcontent-gkm-c24="" class=" col-md-6 col-lg-6 col-sm-6 ng-star-inserted">
+<section>
+<div class="text-center p-3" style="background-color: #3065cb;">
+<a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+</div>
+
+</section>
+</div>
+</div>   -->
+
+
+
+<!-- 
+<div class="row col-md-14 col-lg-14 col-sm-14">
+<div class=" text-center text-lg-start fixed-bottom">
+
+
+<div class="text-center py-2" style="background-color: #3065cb;">
+<a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+</div>
+
+</div>
+</div> -->
+<!-- <div  class=" flex-column flex-md-row
+align-items-center
+justify-content-between"style="background-color: #3065cb;padding-bottom:2%;">
+<div class="text-center">
+
+<a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+</div>
+</div> -->
+
+
+
+<footer class="text-center text-white fixed-bottom" style="background-color:whitesmoke;">
+<!-- 
+<div class="container p-0"></div> -->
+
+
+
+<div class="text-center p-3" style="background-color: #3065cb;">
+
+<a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+</div>
+
+</footer>
+
+
+
+

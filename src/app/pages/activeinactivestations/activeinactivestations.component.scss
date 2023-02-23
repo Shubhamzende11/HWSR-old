@@ -1,0 +1,32 @@
+.bg{
+  background-color: #045d5d;
+}
+.tableFixHead thead th {
+  position: sticky;
+
+  max-width: 1rem;
+  top: 0;
+  background-color: #045d5d;
+
+}
+.table-responsive{
+  background-color:#ffff ;
+  
+
+ }
+ .table-responsive1{
+  background-color:#ffff ;
+  
+ }
+ .body{
+  font-size: 10px;
+}
+
+// .tableheight{
+//   height: 50vh;
+//   margin: 0;
+// }
+.tableheadcorner {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}

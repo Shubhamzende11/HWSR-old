@@ -1,0 +1,184 @@
+
+<div class="row col-md-14 col-lg-14 col-sm-14">
+  <div class="card-title d-flex justify-content-between">
+    <a routerLink="/dashboard"><button type="button" class="btn btn-primary btn-rounded fw-bolder" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">Back</button></a>
+    <h1><img src="https://cdn.iconscout.com/icon/free/png-256/location-3079544-2561454.png" srcset="https://cdn.iconscout.com/icon/free/png-512/location-3079544-2561454.png 2x" alt="Location Icon" width="35">
+      {{stationName}}</h1>
+  </div>
+
+ 
+</div>
+
+
+
+
+      <div class="row col-md-14 col-lg-14 col-sm-14 ">
+
+        <div class="col-md-6 col-lg-6 col-sm-6 ">
+          <div _ngcontent-gkm-c24="" class="  ng-star-inserted">
+            <div class="card-header border-0 pt-6  "style="background-color: #045d5d;">
+              <h3 class="text-center ">
+                <span class="card-label  text-white fw-bolder fs-6 mb-1 ">1 min Average</span>
+               
+              </h3>
+              <div class="card-toolbar ">
+              
+                
+              </div>
+            </div>
+           
+              <div class="table-responsive ">
+                <table class="table align-middle gs-0 gy-3">
+                  <tbody >
+
+                    <tr >
+                      <td>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Speed(knot)</li>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average1min[0]?.['1_min_Average']?.['Wind_Speed(knot)']}}</li>
+                      </td>
+                   
+                      <td>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Direction(deg)</li>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average1min[0]?.['1_min_Average']?.['Wind_Direction(deg)']}}</li>
+                      </td>
+                      <td>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Pressure(mbar)</li>
+                        <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average1min[0]?.['1_min_Average']?.['Wind Pressure(mbar)']}}</li>
+                      </td>
+                               
+                    </tr>
+                 
+                  </tbody>
+                  </table>
+                </div>
+              
+                
+              </div>
+              <br>
+
+
+              <div _ngcontent-gkm-c24="" class="  ng-star-inserted">
+                <div class="card-header border-0 pt-6"style="background-color: #045d5d;">
+                  <h3 class="text-center ">
+                    <span class="card-label  text-white fw-bolder fs-6 mb-1 ">3 min Average</span>
+                   
+                  </h3>
+                  <div class="card-toolbar">
+                  
+                    
+                  </div>
+                </div>
+               
+                  <div class="table-responsive2 ">
+                    <table class="table align-middle gs-0 gy-3">
+                      <tbody >
+                        <tr >
+                    
+                          <td>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Speed(knot)</li>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average3min[0]?.['3_min_Average']?.['Wind_Speed(knot)']}}</li>
+                          </td>
+                        
+                          <td>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Direction(deg)</li>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average3min[0]?.['3_min_Average']?.['Wind_Direction(deg)']}}</li>
+                          </td>
+                         
+                          <td>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Pressure(mbar)</li>
+                            <li class="fw-bolder text-center d-block mb-1 fs-6">{{Average3min[0]?.['3_min_Average']?.['Wind Pressure(mbar)']}}</li>
+                          </td>
+                                  
+                        </tr>
+                      </tbody>
+                      </table>
+                    </div>
+                  
+                    
+                  </div>
+                  <br>
+                  
+
+
+                   <div _ngcontent-gkm-c24="" class="  ng-star-inserted">
+                    <div class="card-header border-0 pt-6"style="background-color: #045d5d;">
+                      <h3 class="text-center ">
+                        <span class="card-label  text-white fw-bolder fs-6 mb-1 ">Instantaneous</span>
+                       
+                      </h3>
+                      <div class="card-toolbar">
+                      
+                        
+                      </div>
+                    </div>
+                    <div class="table-responsive3 ">
+                      <table class="table align-middle gs-0 gy-3">
+                        <tbody >
+                          <tr >
+                      
+                            <td>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Speed(knot)</li>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">{{instantaneous[0].Instantaneous?.['Wind_Speed(knot)'] }}</li>
+                            </td>
+                         
+                            <td>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Direction(deg)</li>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">{{instantaneous[0].Instantaneous?.['Wind_Direction(deg)']}}</li>
+                            </td>
+                           
+                            <td>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">Wind Pressure(mbar)</li>
+                              <li class="fw-bolder text-center d-block mb-1 fs-6">{{instantaneous[0].Instantaneous?.['Wind Pressure(mbar)']}}</li>
+                            </td>
+                                 
+                          </tr>
+                        </tbody>
+                        </table>
+                      </div>
+                   </div>
+                  
+              
+        </div>
+          
+        
+          <div class="col-md-6 col-lg-6 col-sm-6  ">
+            
+            <app-charts-widget3
+            class="card "
+            [winddirectionone]="winddirectionone"
+            [winddirectionthree]="winddirectionthree"
+            chartWidth="100px"
+          ></app-charts-widget3>
+          <br>
+          <app-charts-widget2
+          class="card  "
+          [windspeedone]="windspeedone"
+          [windspeedthree]="windspeedthree"
+          chartWidth="100px"
+        ></app-charts-widget2>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+        
+          
+         
+
+     
+
+
+
+      <footer class="text-center text-white fixed-bottom" style="background-color:whitesmoke;">
+
+        <div class="container p-0"></div>
+      
+      
+      
+        <div class="text-center p-3" style="background-color: #3065cb;">
+          
+          <a class="text-white"> Copyright @ 2022 India Meteorological Department Shivajinagar, Pune   ||   Developed by Mobicloud Technologies Pvt. Ltd. ,Pune  </a>
+        </div>
+      
+      </footer>
+   
